@@ -24,13 +24,13 @@ public class MovieListObserver implements Observer<List<Movie>> {
     @Override
     public void onError(Throwable e) {
         //Show errors on the view
-//        mView.showErrorSnackBar(e.getMessage());
+        mView.showErrorSnackBar(e.getMessage());
         Log.e("TAG", e.getMessage());
     }
 
     @Override
     public void onComplete() {
-        //TODO
+        mView.showErrorSnackBar("Completed");
     }
 
     @Override

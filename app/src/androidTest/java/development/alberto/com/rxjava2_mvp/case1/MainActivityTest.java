@@ -36,6 +36,7 @@ public class MainActivityTest {
     public void mainActivityShouldCheckElementsDisplayedTest() {
         assertNotNull(onView(withId(R.id.splashImage)));
         assertNotNull(onView(withId(R.id.list)));
+        assertNotNull(onView(withId(R.id.ll)));
         assertNotNull(onView(withId(R.id.title)));
         assertNotNull(onView(withId(R.id.movieImage)));
         assertNotNull(onView(withId(R.id.release)));

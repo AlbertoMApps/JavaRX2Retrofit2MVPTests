@@ -1,8 +1,10 @@
 package development.alberto.com.rxjava2_mvp.case1;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements ScreenCase1.View,
     @BindView(R.id.list)
     RecyclerView mRecyclerView;
     private MovieListAdapter mAdapter;
+    @BindView(R.id.ll) LinearLayoutCompat mLinearLayout;
     private Unbinder unbinder;
 
     @Override
@@ -45,6 +48,11 @@ public class MainActivity extends AppCompatActivity implements ScreenCase1.View,
     public void updateMovieList(List<Movie> movieList) {
         initRecyclerView();
         setmAdapter(movieList);
+    }
+
+    @Override
+    public void showErrorSnackBar(String error) {
+        Snackbar.make(mLinearLayout, error, Snackbar.LENGTH_SHORT).show();
     }
 
 

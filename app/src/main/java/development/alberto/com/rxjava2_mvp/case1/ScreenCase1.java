@@ -13,6 +13,8 @@ public interface ScreenCase1 {
 
         void updateMovieList(List<Movie> movieList);
 
+        void showErrorSnackBar(String error);
+
     }
 
     interface UserActionsListener {
